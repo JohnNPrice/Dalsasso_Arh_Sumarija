@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Apply the theme
+
         applyTheme();
 
         setContentView(R.layout.activity_main);
@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
         appDatabase = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "sumarija-db").build();
 
-        // Load saved values from SharedPreferences
+
+
         loadValues();
 
         Button deleteButton = findViewById(R.id.deleteButton);
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         textViewAmmountClassB = findViewById(R.id.textViewAmmountClassB);
         textViewAmmountClassC = findViewById(R.id.textViewAmmountClassC);
 
-        // Set initial values for the TextViews
+
         updateTextViews();
 
         Button saveButton = findViewById(R.id.dismiss_button);
@@ -134,14 +135,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-        finish(); // Close MainActivity
+        finish();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == SETTINGS_REQUEST) {
-            recreate(); // Recreate activity to apply new theme
+            recreate();
         }
     }
 
@@ -150,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         String classTextContent = classText.getText().toString();
         String amountStr = amountText.getText().toString();
 
-        // Input validation
+
         if (company.isEmpty() || classTextContent.isEmpty() || amountStr.isEmpty()) {
             Toast.makeText(this, "Molim vas popunite sva polja", Toast.LENGTH_SHORT).show();
             return;
@@ -169,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // Deduct amount from the corresponding class
+
         boolean validTransaction = false;
         switch (classTextContent) {
             case "A":
@@ -208,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
         classText.setText("");
         amountText.setText("");
 
-        // Hide the keyboard
+
         View view = this.getCurrentFocus();
         if (view != null) {
             InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
@@ -264,7 +265,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Toast.makeText(MainActivity.this, "Baza podataka je izbrisana", Toast.LENGTH_SHORT).show();
-                            // Reset values
+
                             classAAmount = 5000;
                             classBAmount = 6000;
                             classCAmount = 7500;

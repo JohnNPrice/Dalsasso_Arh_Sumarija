@@ -21,13 +21,13 @@ public class HomeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_home);
 
-        // Initialize buttons
+
         Button buttonInvoice = findViewById(R.id.button_Invoice);
         Button buttonPrice = findViewById(R.id.button_Price);
         Button buttonShowInvoice = findViewById(R.id.button_Show_Invoice);
         ImageButton homeSettingsButton = findViewById(R.id.homeSettingsButton);
 
-        // Set click listeners
+
         buttonInvoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,7 +105,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
-            // Restart the activity to apply the new theme
+
             recreate();
         }
     }

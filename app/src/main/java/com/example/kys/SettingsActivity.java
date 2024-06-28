@@ -14,7 +14,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Apply the theme
+
         applyTheme();
 
         setContentView(R.layout.activity_settings);
@@ -30,14 +30,14 @@ public class SettingsActivity extends AppCompatActivity {
                 editor.putBoolean("useBlueTheme", isChecked);
                 editor.apply();
 
-                setResult(RESULT_OK);  // Set result to OK
-                recreate();  // Recreate the activity to apply the new theme
+                setResult(RESULT_OK);
+                recreate();
             }
         });
 
         ImageButton backButton = findViewById(R.id.button_back);
         backButton.setOnClickListener(v -> {
-            setResult(RESULT_OK);  // Set result to OK
+            setResult(RESULT_OK);
             finish();
         });
     }

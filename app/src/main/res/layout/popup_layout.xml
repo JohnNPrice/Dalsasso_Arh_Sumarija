@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:text="Klasa A: 10 eura"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:text="Klasa B: 2 eura"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:text="Klasa C: 5 eura"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/dismiss_button"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:text="OK" />
+</LinearLayout>
